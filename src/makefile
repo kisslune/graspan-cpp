@@ -1,10 +1,10 @@
 CC=g++ -std=c++0x
 
 #use path according to boost installation directory in user machine
-export LD_LIBRARY_PATH=/home/aftab/Downloads/boost_1.62_installed/lib:$LD_LIBRARY_PATH 
+export LD_LIBRARY_PATH=../boost_1_62_0/lib:$LD_LIBRARY_PATH 
 
 #use paths according to boost installation directory in user machine
-CFLAGS= -I/home/aftab/Downloads/boost_1.62_installed/include -L/home/aftab/Downloads/boost_1.62_installed/lib -O2 -ggdb -lboost_thread -lpthread -lboost_system
+CFLAGS= -I../boost_1_62_0/include -L../boost_1_62_0/lib -O2 -ggdb -lboost_thread -lpthread -lboost_system
 
 ##### source files #####
 # preprocessing
@@ -18,5 +18,5 @@ UTIL=../test/timer.cpp Library/Logger.cpp
 
 ##### build rules #####
 comp: dispatcher/graspan.cpp $(PREP) $(LOADER) $(COMPUTATION) $(DATASTRUCTS) $(UTIL)
-	$(CC) dispatcher/graspan.cpp $(PREP) $(LOADER) $(COMPUTATION) $(DATASTRUCTS) $(UTIL) -o ../bin/comp -I/home/aftab/Downloads/boost_1.62_installed/include -L/home/aftab/Downloads/boost_1.62_installed/lib -O2 -ggdb -lboost_thread -lpthread -lboost_system
+	$(CC) dispatcher/graspan.cpp $(PREP) $(LOADER) $(COMPUTATION) $(DATASTRUCTS) $(UTIL) -o ../bin/comp -I../boost_1_62_0/include -L../boost_1_62_0/lib -O2 -ggdb -lboost_thread -lpthread -lboost_system
 
